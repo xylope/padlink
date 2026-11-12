@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Manette blanche, croix et boutons évidés (evenOdd) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M38,38 H70 A15,15 0 0 1 84.4,49 L89,67 A8,8 0 0 1 75.6,74.8 L68,67 H40 L32.4,74.8 A8,8 0 0 1 19,67 L23.6,49 A15,15 0 0 1 38,38 Z
+            M35,46 h5 v5 h5 v5 h-5 v5 h-5 v-5 h-5 v-5 h5 Z
+            M73,44.5 m-3,0 a3,3 0 1 0 6,0 a3,3 0 1 0 -6,0
+            M73,58.5 m-3,0 a3,3 0 1 0 6,0 a3,3 0 1 0 -6,0
+            M66,51.5 m-3,0 a3,3 0 1 0 6,0 a3,3 0 1 0 -6,0
+            M80,51.5 m-3,0 a3,3 0 1 0 6,0 a3,3 0 1 0 -6,0" />
+</vector>

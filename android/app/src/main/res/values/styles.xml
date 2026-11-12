@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_bg">#0A0C11</color>
+    <color name="accent">#5B7CFF</color>
+
+    <style name="AppTheme" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">@color/ic_bg</item>
+        <item name="android:statusBarColor">@color/ic_bg</item>
+        <item name="android:navigationBarColor">@color/ic_bg</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>

@@ -1,0 +1,23 @@
+# --- Secrets : ne JAMAIS publier ---
+android/keystore/
+android/keystore.properties
+*.jks
+*.keystore
+
+# --- Propre à cette machine ---
+android/local.properties
+.idea/
+*.iml
+
+# --- Généré ---
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+*.apk
+*.aab
+
+# --- Ancien serveur PC (Wi-Fi), plus utilisé par l'app ---
+pc_server/
+__pycache__/
+.venv/
