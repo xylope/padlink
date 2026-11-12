@@ -1,15 +1,55 @@
-# PadLink : ton téléphone devient une manette Bluetooth pour PC
+# PadLink : ton téléphone devient une manette Xbox pour PC
 
-Le PC voit une **manette Xbox sans fil**, reconnue par Windows avec son propre pilote.
-**Rien à installer ni à lancer sur le PC.** Elle marche dans Steam, Epic, Game Pass, les émulateurs et Moonlight.
+> [!IMPORTANT]
+> **🤖 Ce projet a été entièrement généré par une intelligence artificielle.**
+>
+> Le code de l'application Android, l'interface, les icônes, les tests et toute la documentation (y compris ce README)
+> ont été écrits par une IA, **Claude (Anthropic)** via l'outil **Claude Code**, à partir de simples demandes en français.
+> **Aucune ligne de code n'a été écrite à la main.** Le rôle humain s'est limité à l'idée, aux demandes et aux essais.
+>
+> C'est un **projet démonstratif**, pas un produit fini : lis le code avant de lui faire confiance (voir « Statut » plus bas).
 
-```
-PadLink.apk   -> à installer sur le téléphone
-android/      -> code source de l'app (Kotlin)
-```
+## Le but du projet
+
+Montrer qu'un **début d'application entièrement autonome**, générée par IA, peut transformer un téléphone Android
+en **vraie manette de jeu pour PC** :
+
+- **Rien à installer sur le PC.** Pas de programme, pas de serveur, pas de pilote. Le téléphone se connecte
+  directement en Bluetooth, comme une manette du commerce.
+- **Le PC voit une manette Xbox sans fil.** L'app simule l'identité et le format de données d'une manette Xbox
+  Bluetooth. Windows la reconnaît avec le pilote qu'il possède déjà.
+- **Reconnue par les jeux et les plateformes sans réassigner les touches** : Steam, GOG, Epic Games, Xbox Game Pass,
+  les émulateurs et Moonlight voient une manette Xbox standard, avec les boutons déjà au bon endroit.
+
+### Comment ça marche, en bref
+Le téléphone se présente en **Bluetooth Low Energy** comme un périphérique de jeu (HID over GATT), avec
+l'identifiant d'une manette Xbox sans fil (Microsoft 045E:0B13) et le même format de rapport (joysticks, gâchettes,
+boutons, croix, vibrations). Windows charge son pilote Xbox intégré (XInput) : pour les jeux, c'est une manette Xbox
+comme une autre.
+
+## Statut
+
+**Prototype.** Ce qui a été vérifié :
+- compilation, tests automatiques du format de la manette Xbox, interface testée sur émulateur Android
+  (aucun plantage sur des milliers d'actions aléatoires) ;
+- revue de sécurité du code Bluetooth.
+
+**Pas encore validé** : l'appairage avec un vrai PC Windows et la reconnaissance dans chaque jeu, car un émulateur
+n'a pas de vrai Bluetooth. Certains téléphones ne permettent pas à une app de se présenter comme un périphérique
+Bluetooth. Les retours (issues GitHub) sont les bienvenus : modèle du téléphone, version de Windows, résultat.
+
+## Fonctionnalités
+- Manette complète : 2 joysticks, croix, A/B/X/Y, LB/RB, gâchettes analogiques LT/RT, View/Menu, bouton Xbox, L3/R3
+- Vibrations du jeu renvoyées au téléphone, niveau de batterie visible sur le PC
+- **Profils** : 6 profils par défaut (Standard Xbox, Standard PS4, FPS, Course, Combat, Rétro) et tes propres profils
+- **Éditeur de disposition** : déplacer, redimensionner, changer la fonction des boutons, en ajouter, en masquer
+- Gyroscope (visée ou volant), turbo, maintien, joysticks flottants, zone morte et courbe réglables
+- Apparence PS4 (✕ ○ □ △) en option
+- Appairage Bluetooth chiffré, aucune permission Internet
 
 ## Installation
-Copie `PadLink.apk` sur le téléphone, ouvre-le et autorise « Installer des applis inconnues ».
+Télécharge `PadLink.apk` depuis la page [Releases](../../releases/latest) sur ton téléphone (Android 8 ou plus),
+ouvre-le et autorise « Installer des applis inconnues ».
 
 ## Première connexion (une seule fois par PC)
 1. Dans l'app : **Lancer la manette**, puis autorise « Appareils à proximité ».
@@ -74,11 +114,12 @@ keyPassword=...
 
 puis lance `gradlew assembleRelease`.
 
-## Note
+## Avertissements
 
-L'app se présente au PC avec l'identifiant d'une manette Xbox sans fil (Microsoft, 045E:0B13) pour être reconnue
-sans pilote. Ce projet n'est ni affilié à Microsoft ni approuvé par Microsoft ; « Xbox » et « PlayStation » sont des marques de
-leurs propriétaires respectifs.
+- **Code généré par IA**, fourni tel quel, sans garantie (voir la licence). Relis-le avant de l'utiliser ou de t'en inspirer.
+- L'app se présente au PC avec l'identifiant d'une manette Xbox sans fil (Microsoft, 045E:0B13) pour être reconnue
+  sans pilote. Ce projet n'est **ni affilié à Microsoft ni approuvé par Microsoft**, ni par Sony ; « Xbox » et
+  « PlayStation » sont des marques de leurs propriétaires respectifs.
 
 ## Licence
 
